@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AMARA GROUP - Exquisite Coastal Living</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&amp;family=Playfair+Display:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        midnight: "#051424",
+                        cyan: {
+                            400: "#22d3ee",
+                            500: "#06b6d4",
+                            glow: "rgba(34, 211, 238, 0.4)"
+                        }
+                    },
+                    fontFamily: {
+                        "body-lg": ["Manrope", "sans-serif"],
+                        "headline-lg": ["Playfair Display", "serif"],
+                        "display-lg": ["Playfair Display", "serif"],
+                        "label-caps": ["Manrope", "sans-serif"],
+                        "body-md": ["Manrope", "sans-serif"],
+                        "headline-md": ["Playfair Display", "serif"],
+                        "display-lg-mobile": ["Playfair Display", "serif"]
+                    },
+                    backgroundImage: {
+                        'grain': "url('data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+        }
+        .glass {
+            background: rgba(5, 20, 36, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(34, 211, 238, 0.1);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+        }
+        .edge-mask {
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-midnight text-white font-body-md antialiased overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-400">
+<div class="grain-overlay"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass border-b border-cyan-400/10 transition-all duration-500">
+<div class="flex justify-between items-center px-6 md:px-20 py-4 max-w-[1920px] mx-auto">
+<div class="flex items-center gap-6 cursor-pointer hover:opacity-80 transition-opacity duration-500 ease-in-out">
+<img alt="Amara Group Logo" class="h-12 w-12 object-cover rounded-full shadow-[0_0_15px_rgba(34,211,238,0.3)] border border-cyan-400/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZKYOf8mgaZIFgwD2ed74A8qrQkWgNMHK-1UBWq2RImLqyVEa1U2Bz_E7qrG5F6wAA6MhzntJamGEKPdw-ZM4OBXdWHUo2EiTudsCuzNoXZxMlgqXMPLL_4JF3d_Qxq91RU9uvQiBIEtBXN2fmXF4AGSqcPwt2hjM538DduV0Kl-3rwLCzys2XtsHtTfJT7ojo6RT7fKQQcIET0-BRBIHKl0pYgoW9AEwYscddDKkq3xzi8ty8ZDw6uF00Niva3vjqS_i94xYVe_A"/>
+<span class="font-body-md font-light text-xl tracking-[0.3em] text-white uppercase text-glow">AMARA</span>
+</div>
+<div class="hidden md:flex space-x-16">
+<a class="font-body-md font-extralight text-xs uppercase tracking-[0.15em] text-cyan-400 border-b border-cyan-400/50 pb-1 duration-500 ease-in-out" href="#">Collections</a>
+<a class="font-body-md font-extralight text-xs uppercase tracking-[0.15em] text-white/60 hover:text-cyan-400 hover:text-glow transition-all duration-500" href="#">Destinations</a>
+<a class="font-body-md font-extralight text-xs uppercase tracking-[0.15em] text-white/60 hover:text-cyan-400 hover:text-glow transition-all duration-500" href="#">Services</a>
+<a class="font-body-md font-extralight text-xs uppercase tracking-[0.15em] text-white/60 hover:text-cyan-400 hover:text-glow transition-all duration-500" href="#">Atelier</a>
+</div>
+<div class="hidden md:block">
+<button class="bg-transparent border border-cyan-400/50 text-cyan-400 px-8 py-3 font-body-md font-light text-xs uppercase tracking-[0.2em] hover:bg-cyan-400 hover:text-midnight transition-all duration-500 shadow-[0_0_15px_rgba(34,211,238,0.1)] hover:shadow-[0_0_25px_rgba(34,211,238,0.4)]">Reserve</button>
+</div>
+<div class="md:hidden flex items-center">
+<button class="text-white hover:text-cyan-400 transition-colors">
+<span class="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center pt-24 overflow-hidden">
+<div class="absolute inset-0 z-0 scale-105 animate-[pulse_20s_ease-in-out_infinite_alternate]">
+<div class="absolute inset-0 bg-gradient-to-b from-midnight/80 via-midnight/40 to-midnight z-10"></div>
+<img alt="Breathtaking coastal view" class="w-full h-full object-cover object-center opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyn40imx547nQrl1EmPU2_nCDSgdCqA5Q6hqI6f_rt_rrXC6C_TW93aC5hiovEzjmndXJFEeus5dXUQzlAFbo--7JbC3zrRl6oTaRNo8hR1dxyNAgD_UBNdTX-cmozDM9AiwWsPp_JEroMFIp54CYBc8XI0cjN5Pkjj7aTuFHggVopeAsSRiegngAuQj_bxzRNnE1MyZNsqJ4B3wreSiKyIfjUcwglzMmgX2CQBkh7Kep9n5_sxHoK6SE90NtGZ13cJ7hCO__p_x0"/>
+</div>
+<div class="relative z-20 text-center px-6 md:px-20 w-full max-w-[1920px] flex flex-col items-center mt-20">
+<h1 class="font-display-lg-mobile md:font-display-lg text-5xl md:text-8xl text-white mb-12 max-w-6xl mx-auto leading-tight font-light tracking-tight">Elevated Living,<br/><span class="italic font-extralight text-cyan-400 text-glow">Redefined.</span></h1>
+<!-- Glassmorphic Search Pill -->
+<div class="glass p-4 rounded-full shadow-[0_0_30px_rgba(34,211,238,0.1)] flex flex-col md:flex-row gap-4 w-full max-w-4xl items-center mt-8 border border-cyan-400/20 relative before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r before:from-cyan-400/10 before:to-transparent before:opacity-50">
+<div class="flex-1 w-full flex items-center px-6 group relative z-10">
+<span class="material-symbols-outlined text-cyan-400 mr-4 font-light">search</span>
+<div class="w-full">
+<label class="block font-body-md font-extralight text-[9px] text-cyan-400/70 mb-1 tracking-[0.2em] uppercase">Sanctuary</label>
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-body-md text-white placeholder-white/40 focus:outline-none transition-all font-light" placeholder="Discover a destination..." type="text"/>
+</div>
+</div>
+<div class="hidden md:block w-px h-10 bg-cyan-400/20 relative z-10"></div>
+<div class="flex-1 w-full flex items-center px-6 group relative z-10 border-t md:border-t-0 border-cyan-400/20 pt-4 md:pt-0">
+<span class="material-symbols-outlined text-cyan-400 mr-4 font-light">calendar_today</span>
+<div class="w-full">
+<label class="block font-body-md font-extralight text-[9px] text-cyan-400/70 mb-1 tracking-[0.2em] uppercase">Arrival / Departure</label>
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-body-md text-white placeholder-white/40 focus:outline-none cursor-pointer transition-all font-light" placeholder="Select timeframe" readonly="" type="text"/>
+</div>
+</div>
+<button class="bg-cyan-400/10 border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-midnight hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-all duration-500 rounded-full h-14 w-14 md:w-auto md:px-10 flex items-center justify-center font-body-md font-light text-xs uppercase tracking-[0.2em] relative z-10 mx-2 mb-2 md:mb-0">
+<span class="hidden md:block">Explore</span>
+<span class="material-symbols-outlined md:hidden font-light">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Featured Collection Editorial -->
+<section class="py-32 px-6 md:px-20 max-w-[1920px] mx-auto relative z-10 bg-midnight">
+<div class="mb-32 flex flex-col md:flex-row justify-between items-end border-b border-cyan-400/20 pb-12">
+<div class="max-w-2xl">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-px bg-cyan-400"></div>
+<span class="font-body-md font-extralight text-cyan-400 text-xs tracking-[0.3em] uppercase">The 2026 Collection</span>
+</div>
+<h2 class="font-display-lg text-5xl md:text-7xl text-white mb-6 leading-tight font-light">Bespoke<br/><span class="text-white/70 italic">Sanctuaries</span></h2>
+</div>
+<p class="font-body-md font-light text-white/60 max-w-md text-right hidden md:block text-lg leading-relaxed">An avant-garde portfolio of waterfront estates, meticulously curated for the global visionary.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-32 md:gap-x-12 relative">
+<!-- Property 1 -->
+<div class="md:col-span-8 group cursor-pointer relative">
+<div class="overflow-hidden relative mb-8 rounded-sm glass p-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<div class="edge-mask">
+<img alt="The Lumina Estate" class="w-full h-[650px] object-cover transition-transform duration-[2s] ease-out group-hover:scale-105 opacity-90 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRrJoCdWWw4QBNva_e8sGJ2dOw4Nb8dqi6EopEAtoS7h9ROwFeFWKV3y7ExgzFonG61_QLTkqJepc4ISmGYBdVzwa5KWEbbvw9VFiTi3Z22MgUQT3ivyOPlxidP2__0CoDZY-F13TCiAREazMGHox3bWccr85FEuRgO6UIuplN-ltFe9ieVwXiBt4b4SdvD_mbaBJj8et5ZfHmzspwKSPxTAl4Rwv_pNK8R8mQQVxZqykYL-IE8Dm1RrbxRR55bRgPrulyHzuVobs"/>
+</div>
+<div class="absolute top-8 left-8 glass px-5 py-2 border border-cyan-400/30">
+<span class="font-body-md font-extralight text-[10px] text-cyan-400 tracking-[0.2em] uppercase">Featured Residence</span>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-start gap-6 px-4">
+<div>
+<h3 class="font-display-lg text-4xl text-white mb-2 group-hover:text-cyan-400 group-hover:text-glow transition-all duration-500 font-light">The Lumina Estate</h3>
+<p class="font-body-md font-extralight text-white/50 text-xs tracking-[0.2em] mb-6 uppercase">Biscayne Bay, Florida</p>
+<div class="flex gap-4">
+<span class="border-b border-cyan-400/30 pb-1 font-body-md font-extralight text-[10px] text-cyan-400/80 tracking-[0.15em] uppercase">Infinity Edge</span>
+<span class="border-b border-cyan-400/30 pb-1 font-body-md font-extralight text-[10px] text-cyan-400/80 tracking-[0.15em] uppercase">Helipad Access</span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-body-md font-extralight text-white/40 text-[10px] uppercase tracking-[0.15em] mb-2">Starting from</p>
+<p class="font-display-lg text-3xl text-cyan-400 font-light">$4,500 <span class="text-sm text-white/40 font-body-md font-extralight">/ night</span></p>
+</div>
+</div>
+</div>
+<!-- Property 2 -->
+<div class="md:col-start-6 md:col-span-7 group cursor-pointer mt-16 md:mt-48 relative">
+<div class="overflow-hidden relative mb-8 rounded-sm glass p-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<div class="edge-mask">
+<img alt="Aura Pavilion" class="w-full h-[550px] object-cover transition-transform duration-[2s] ease-out group-hover:scale-105 opacity-90 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3GCoDHr_PMd4H2rzEdkkLkKibOEsPBggJTdPlF-h3U0dZgUIwT1EcxnwtqtEwpcPqYNPfPytWBAQs-7hzC9bovYr5o-7i8PqE7-dCqnVi9528EhRvteEhH4sxouBIzVD2YczNPY8wqdLOpf3dhg87xQdXOalJTPMQAy_fNd_k4VCjvEXM7OZVwo2Z0W_MSS-WDAx35y4kVBTYR68__sNdw3C35UqZRX4zW2owb2EXVJOcN5H_K94Z6thQtFW_BZQJ9ybn0I_WicM"/>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-start gap-6 px-4">
+<div>
+<h3 class="font-display-lg text-4xl text-white mb-2 group-hover:text-cyan-400 group-hover:text-glow transition-all duration-500 font-light">Aura Pavilion</h3>
+<p class="font-body-md font-extralight text-white/50 text-xs tracking-[0.2em] mb-6 uppercase">Naples, Florida</p>
+<div class="flex gap-4">
+<span class="border-b border-cyan-400/30 pb-1 font-body-md font-extralight text-[10px] text-cyan-400/80 tracking-[0.15em] uppercase">Private Green</span>
+<span class="border-b border-cyan-400/30 pb-1 font-body-md font-extralight text-[10px] text-cyan-400/80 tracking-[0.15em] uppercase">Wellness Spa</span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-body-md font-extralight text-white/40 text-[10px] uppercase tracking-[0.15em] mb-2">Starting from</p>
+<p class="font-display-lg text-3xl text-cyan-400 font-light">$5,200 <span class="text-sm text-white/40 font-body-md font-extralight">/ night</span></p>
+</div>
+</div>
+</div>
+<!-- Property 3 -->
+<div class="md:col-start-2 md:col-span-6 group cursor-pointer mt-16 md:mt-32 relative">
+<div class="overflow-hidden relative mb-8 rounded-sm glass p-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<div class="edge-mask">
+<img alt="The Solstice House" class="w-full h-[600px] object-cover transition-transform duration-[2s] ease-out group-hover:scale-105 opacity-90 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-EU2RK8QsiePoV-s99Ivw7m8p99Iz-xidGVKtJDfrqLYOXVD6sbyzld-zuCVhvmsVWU4S54jc-k58QjLFMewMC5FMMoEfNjnwyEFvQmrNpV-dBQVlWjREEGj15dSABGJ0TvJLVgM7THa8nSSF_8n3qNrPR-JkH8osKT6g3COmMVTokNqXcACOC0YvuEtcFrV6tpWrDZzSnR9xXkU0LbAQqE8gPx2EnYNGghlLQfYKIeR6xWxtKhcs1dScT1j43ceMKMRoM1lO5ig"/>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-start gap-6 px-4">
+<div>
+<h3 class="font-display-lg text-3xl text-white mb-2 group-hover:text-cyan-400 group-hover:text-glow transition-all duration-500 font-light">The Solstice House</h3>
+<p class="font-body-md font-extralight text-white/50 text-[10px] tracking-[0.2em] mb-6 uppercase">Sarasota, Florida</p>
+<div class="flex gap-4">
+<span class="border-b border-cyan-400/30 pb-1 font-body-md font-extralight text-[10px] text-cyan-400/80 tracking-[0.15em] uppercase">Sunken Lounge</span>
+<span class="border-b border-cyan-400/30 pb-1 font-body-md font-extralight text-[10px] text-cyan-400/80 tracking-[0.15em] uppercase">Glass Atrium</span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-body-md font-extralight text-white/40 text-[10px] uppercase tracking-[0.15em] mb-2">Starting from</p>
+<p class="font-display-lg text-2xl text-cyan-400 font-light">$3,800 <span class="text-xs text-white/40 font-body-md font-extralight">/ night</span></p>
+</div>
+</div>
+</div>
+<!-- Property 4 -->
+<div class="md:col-start-7 md:col-span-5 group cursor-pointer mt-16 md:mt-64 relative">
+<div class="overflow-hidden relative mb-8 rounded-sm glass p-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<div class="edge-mask">
+<img alt="Coastal Haven" class="w-full h-[450px] object-cover transition-transform duration-[2s] ease-out group-hover:scale-105 opacity-90 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa3huRIkatA6SuT3-ySJhWkh6d4bl5smR313KwXzTh9Fosx2uwrUIRGmjFlzD3hHPnRM4mEQh_M4IDVhmjPHJUYa9S-pAIZ46UciyI5qKu8-skztanswvXXZyRIhGYnFLUu0AWAYQk-h485v458qp5TVGkHTNFWTCcwbKRKI2KNLH65tNbwbHSijw97PRG0qkHy46EB49mCH33l_09XvIkaClKURLjiRSMpeAldOjZjOu96ot-gQP8WydYymHAJbbcbbHf07W9GEY"/>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-start gap-6 px-4">
+<div>
+<h3 class="font-display-lg text-3xl text-white mb-2 group-hover:text-cyan-400 group-hover:text-glow transition-all duration-500 font-light">Coastal Haven</h3>
+<p class="font-body-md font-extralight text-white/50 text-[10px] tracking-[0.2em] mb-6 uppercase">Key West, Florida</p>
+<div class="flex gap-4">
+<span class="border-b border-cyan-400/30 pb-1 font-body-md font-extralight text-[10px] text-cyan-400/80 tracking-[0.15em] uppercase">Ocean Front</span>
+<span class="border-b border-cyan-400/30 pb-1 font-body-md font-extralight text-[10px] text-cyan-400/80 tracking-[0.15em] uppercase">Smart Home</span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-body-md font-extralight text-white/40 text-[10px] uppercase tracking-[0.15em] mb-2">Starting from</p>
+<p class="font-display-lg text-2xl text-cyan-400 font-light">$4,100 <span class="text-xs text-white/40 font-body-md font-extralight">/ night</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-40 text-center flex justify-center">
+<button class="flex items-center gap-4 text-cyan-400 font-body-md font-light text-xs uppercase tracking-[0.3em] hover:text-white transition-all duration-500 group">
+<span class="w-12 h-px bg-cyan-400 group-hover:w-16 group-hover:bg-white transition-all duration-500"></span>
+                Explore The Full Portfolio
+                <span class="w-12 h-px bg-cyan-400 group-hover:w-16 group-hover:bg-white transition-all duration-500"></span>
+</button>
+</div>
+</section>
+<!-- About Section Editorial -->
+<section class="py-[200px] px-6 md:px-20 bg-midnight relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-cyan-900/5 to-transparent pointer-events-none"></div>
+<div class="max-w-5xl mx-auto text-center relative z-10">
+<img alt="Amara Group Logo" class="h-20 w-20 object-cover rounded-full mx-auto mb-12 shadow-[0_0_30px_rgba(34,211,238,0.2)] border border-cyan-400/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZKYOf8mgaZIFgwD2ed74A8qrQkWgNMHK-1UBWq2RImLqyVEa1U2Bz_E7qrG5F6wAA6MhzntJamGEKPdw-ZM4OBXdWHUo2EiTudsCuzNoXZxMlgqXMPLL_4JF3d_Qxq91RU9uvQiBIEtBXN2fmXF4AGSqcPwt2hjM538DduV0Kl-3rwLCzys2XtsHtTfJT7ojo6RT7fKQQcIET0-BRBIHKl0pYgoW9AEwYscddDKkq3xzi8ty8ZDw6uF00Niva3vjqS_i94xYVe_A"/>
+<span class="font-body-md font-extralight text-cyan-400 text-[10px] tracking-[0.4em] uppercase mb-8 block text-glow">The Amara Atelier</span>
+<h2 class="font-display-lg text-5xl md:text-7xl text-white mb-12 leading-tight font-light">Architectural Brilliance,<br/><span class="italic text-white/70">Unspoken Luxury.</span></h2>
+<p class="font-body-md font-light text-white/60 leading-loose mb-16 max-w-3xl mx-auto text-lg md:text-xl">
+                We transcend traditional hospitality. Our meticulously curated collection of futuristic coastal retreats offers more than just a place to stay—they provide a sanctuary for the modern elite. From AI-driven bespoke concierge services to properties that seamlessly blend hyper-modern architectural brilliance with raw natural beauty, every microscopic detail of your journey is engineered for serene, uncompromising exclusivity.
+            </p>
+<button class="bg-transparent border border-cyan-400 text-cyan-400 px-12 py-5 font-body-md font-light text-xs uppercase tracking-[0.2em] hover:bg-cyan-400 hover:text-midnight transition-all duration-500 shadow-[0_0_15px_rgba(34,211,238,0.1)] hover:shadow-[0_0_30px_rgba(34,211,238,0.3)]">Discover Our Ethos</button>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-32 px-6 md:px-20 max-w-[1920px] mx-auto bg-midnight relative z-10">
+<div class="mb-24 flex items-center justify-between border-b border-cyan-400/20 pb-12">
+<h2 class="font-display-lg text-4xl text-white font-light">Client Impressions</h2>
+<div class="w-24 h-px bg-cyan-400/50"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-24">
+<div class="relative group glass p-10 border border-cyan-400/10 hover:border-cyan-400/30 transition-colors duration-500">
+<div class="absolute -left-4 -top-8 text-cyan-400/10 font-display-lg text-[100px] leading-none group-hover:text-cyan-400/20 transition-colors duration-700">"</div>
+<p class="font-body-md font-light text-lg text-white/70 leading-loose mb-10 relative z-10 italic">
+                    An unparalleled paradigm shift in travel. The hyper-personalized attention to detail in the property and the invisible, seamless service provided by the Amara AI concierge made our retreat absolutely perfect. The ultimate definition of effortless, futuristic luxury.
+                </p>
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 glass border border-cyan-400/30 rounded-full flex items-center justify-center text-cyan-400 font-display-lg font-light text-xl shadow-[0_0_10px_rgba(34,211,238,0.1)]">E</div>
+<div>
+<p class="font-body-md font-light text-xs tracking-[0.2em] text-white mb-1 uppercase">Eleanor V.</p>
+<p class="font-body-md font-extralight text-white/50 text-[10px] tracking-widest uppercase">Resident of The Lumina Estate</p>
+</div>
+</div>
+</div>
+<div class="relative group glass p-10 border border-cyan-400/10 hover:border-cyan-400/30 transition-colors duration-500">
+<div class="absolute -left-4 -top-8 text-cyan-400/10 font-display-lg text-[100px] leading-none group-hover:text-cyan-400/20 transition-colors duration-700">"</div>
+<p class="font-body-md font-light text-lg text-white/70 leading-loose mb-10 relative z-10 italic">
+                    From the moment the biometric entry recognized us, we knew this was the future. The structural elegance of the home matched perfectly with the breathtaking, untamed coastal views. A transcendent escape from the noise of tomorrow.
+                </p>
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 glass border border-cyan-400/30 rounded-full flex items-center justify-center text-cyan-400 font-display-lg font-light text-xl shadow-[0_0_10px_rgba(34,211,238,0.1)]">M</div>
+<div>
+<p class="font-body-md font-light text-xs tracking-[0.2em] text-white mb-1 uppercase">Marcus T.</p>
+<p class="font-body-md font-extralight text-white/50 text-[10px] tracking-widest uppercase">Resident of Aura Pavilion</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full bg-[#030b14] text-white py-24 border-t border-cyan-400/10 relative overflow-hidden">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end px-6 md:px-20 max-w-[1920px] mx-auto relative z-10">
+<div class="mb-16 md:mb-0">
+<img alt="Amara Group Logo" class="h-14 w-14 object-cover rounded-full mb-8 shadow-[0_0_15px_rgba(34,211,238,0.2)] border border-cyan-400/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZKYOf8mgaZIFgwD2ed74A8qrQkWgNMHK-1UBWq2RImLqyVEa1U2Bz_E7qrG5F6wAA6MhzntJamGEKPdw-ZM4OBXdWHUo2EiTudsCuzNoXZxMlgqXMPLL_4JF3d_Qxq91RU9uvQiBIEtBXN2fmXF4AGSqcPwt2hjM538DduV0Kl-3rwLCzys2XtsHtTfJT7ojo6RT7fKQQcIET0-BRBIHKl0pYgoW9AEwYscddDKkq3xzi8ty8ZDw6uF00Niva3vjqS_i94xYVe_A"/>
+<span class="font-body-md font-light text-3xl tracking-[0.3em] text-white uppercase block mb-6 text-glow">AMARA</span>
+<p class="font-body-md font-extralight text-[9px] text-white/40 tracking-[0.3em] uppercase">© 2026 AMARA ATELIER. REDEFINING TOMORROW.</p>
+</div>
+<div class="flex flex-wrap gap-x-12 gap-y-6">
+<a class="font-body-md font-extralight text-[9px] text-white/50 hover:text-cyan-400 tracking-[0.2em] uppercase transition-colors duration-500" href="#">Privacy Protocol</a>
+<a class="font-body-md font-extralight text-[9px] text-white/50 hover:text-cyan-400 tracking-[0.2em] uppercase transition-colors duration-500" href="#">Terms of Engagement</a>
+<a class="font-body-md font-extralight text-[9px] text-white/50 hover:text-cyan-400 tracking-[0.2em] uppercase transition-colors duration-500" href="#">Global Press</a>
+<a class="font-body-md font-extralight text-[9px] text-white/50 hover:text-cyan-400 tracking-[0.2em] uppercase transition-colors duration-500" href="#">Concierge</a>
+</div>
+</div>
+</footer>
+</body></html>
